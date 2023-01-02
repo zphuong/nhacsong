@@ -15,7 +15,11 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->singleton(
             \App\Repositories\TuneRepositoryInterface::class,
-            \App\Repositories\TuneRepositories::class
+            \App\Repositories\TuneRepositories::class,
+        );
+        $this->app->singleton(
+            \App\Repositories\SongRepositoryInterface::class,
+            \App\Repositories\SongRepositories::class,
         );
     }
 

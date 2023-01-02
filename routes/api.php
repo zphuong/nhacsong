@@ -21,6 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/','App\Http\Controllers\HomeController@index');
 Route::get('tune', 'App\Http\Controllers\TuneController@index');
 Route::get('song', 'App\Http\Controllers\SongController@index');
+Route::post('song/create', 'App\Http\Controllers\SongController@store');
 Route::post('tune', 'App\Http\Controllers\TuneController@store');
 Route::get('tune/{id}', 'App\Http\Controllers\TuneController@show');
 

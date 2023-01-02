@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use App\Repositories\TuneRepositoryInterface;
 use Illuminate\Http\Request;
-use App\Repositories\TuneRepositories;
 
 class TuneController extends Controller
 {
     protected $tuneRepo;
+//    public $response;
 
     public function __construct(TuneRepositoryInterface $tuneRepo)
     {
         $this->tuneRepo = $tuneRepo;
+        parent::__construct();
     }
 
     /**
@@ -24,7 +24,7 @@ class TuneController extends Controller
     public function index()
     {
         $this->response['data'] = $this->tuneRepo->getAll();
-        return response()->json($this->response);
+        return response($this->response);
     }
     /**
      * Show the form for creating a new resource.

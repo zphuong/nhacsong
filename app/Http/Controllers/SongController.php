@@ -2,12 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Song;
-use App\Models\Tone;
 use Illuminate\Http\Request;
+use App\Repositories\SongRepositoryInterface;
 
 class SongController extends Controller
 {
+    protected $songRepo;
+    public function __construct(SongRepositoryInterface $songRepo)
+    {
+        parent::__construct();
+        $this->songRepo = $songRepo;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,13 +21,6 @@ class SongController extends Controller
      */
     public function index()
     {
-//        $this->response['data'] = Song::find(2)->tone;
-//        $thi
-//        return response()->json($this->response);
-
-        $tone = new Tone(['name'=>'ngu']);
-        $song = Song::find(2);
-        $song->tone()->save($tone);
 
     }
 
@@ -43,7 +42,8 @@ class SongController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->response['data'] = $this->songRepo->create($request);
+        return response($this->response);
     }
 
     /**
