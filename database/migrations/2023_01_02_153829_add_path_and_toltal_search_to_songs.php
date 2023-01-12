@@ -14,8 +14,8 @@ class AddPathAndToltalSearchToSongs extends Migration
     public function up()
     {
         Schema::table('songs', function (Blueprint $table) {
-            $table->string('path');
-            $table->bigInteger('total_search');
+            $table->string('path')->nullable();
+            $table->bigInteger('total_search')->default(0);
         });
     }
 

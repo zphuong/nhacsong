@@ -44,7 +44,7 @@ class TuneController extends Controller
      */
     public function store(Request $request)
     {
-        $this->response['data'] = $this->tuneRepo->create($request->toArray());
+        $this->response['data'] = $this->tuneRepo->store($request->toArray());
         return response()->json($this->response);
     }
 

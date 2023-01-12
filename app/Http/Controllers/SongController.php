@@ -42,8 +42,8 @@ class SongController extends Controller
      */
     public function store(Request $request)
     {
-        $this->response['data'] = $this->songRepo->create($request);
-        return response($this->response);
+        $this->response['data'] = $this->songRepo->store($request);
+        return response()->json($this->response);
     }
 
     /**
@@ -54,7 +54,8 @@ class SongController extends Controller
      */
     public function show($id)
     {
-        //
+        $this->response['data'] = $this->songRepo->show($id);
+        return response()->json($this->response);
     }
 
     /**
@@ -88,6 +89,19 @@ class SongController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->songRepo->destroy($id);
+        $this->response['data'] = "Xóa bài hát thành công";
+        return response()->json($this->response);
+    }
+    /**
+     * Search song
+     *
+     * @param  string  $name
+     * @return \Illuminate\Http\Response
+     */
+    public function search(Request $request)
+    {
+        $this->response['data'] = $this->songRepo->search($request);
+        return response()->json($this->response);
     }
 }

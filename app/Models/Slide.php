@@ -9,7 +9,11 @@ class Slide extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'song_id',
+        'file_name'
+    ];
     public function song(){
-        return $this->belongsTo(Song::class);
+        return $this->hasOne(Song::class);
     }
 }

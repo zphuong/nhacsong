@@ -29,7 +29,7 @@ abstract class BaseRepository implements RepositoryInterface
         return $this->model->find($id);
     }
 
-    public function create($payload = [])
+    public function store($payload = [])
     {
         // TODO: Implement create() method.
         return $this->model->create($payload);

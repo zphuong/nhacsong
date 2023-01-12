@@ -13,13 +13,13 @@ class CreateSlideTable extends Migration
      */
     public function up()
     {
-        Schema::create('slide', function (Blueprint $table) {
+        Schema::create('slides', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('id_song')->unsigned();
+            $table->bigInteger('song_id')->unsigned();
             $table->string('file_name');
             $table->timestamps();
 
-            $table->foreign('id_song')
+            $table->foreign('song_id')
                 ->on('songs')
                 ->references('id');
         });

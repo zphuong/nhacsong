@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
              'author'   =>   'Sơn Tùng MTP',
              'singer'   =>   'Sơn Tùng MTP',
              'short_lyrics' => 'Liệu rằng chia tay trong em có quên được câu ca',
+             'short_name' => 'cmnq',
          ]);
     }
 }

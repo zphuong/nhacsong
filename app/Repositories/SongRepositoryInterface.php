@@ -4,6 +4,6 @@ namespace App\Repositories;
 
 interface SongRepositoryInterface
 {
-    public function getFile($file);
-    public function create($payload);
+    public function show($id);
+    public function store($payload);
 }

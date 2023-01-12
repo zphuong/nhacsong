@@ -24,6 +24,6 @@ class Song extends Model
     }
     public function slide()
     {
-        return $this->hasOne(Slide::class);
+        return $this->hasMany(Slide::class);
     }
 }
